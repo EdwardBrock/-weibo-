@@ -1,0 +1,45 @@
+<ion-view view-title="微博">
+      <ion-nav-bar class="bar-light">
+          <ion-nav-buttons side="left">
+              <a class="button icon-left ion-chevron-left button-clear button-dark" nav-direction="back" ui-sref="tab.user"></a>
+              </a>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+                  <ion-content>
+                            <div class="list list-inset " ng-repeat="x in allpinglun |filter:data.criteria">
+                                <div class="item item-avatar-left item-icon-right"  >
+                                  <img src="img/27.png" alt="" style="border-radius:50%">
+                                  <h2 style="display:inline;font-weight:bold">Zhang</h2>
+                                    <div id="wrap" ng-hide="x.content2 == 'undefined'" style="min-height:30px;min-width:100%;width:100%"><p style="white-space:normal;font-weight:bold;color:black" id="p1"  >{{x.content2}}</p></div>
+                                    <br>
+                                    <div id="wrap" ng-hide="x.yijian =='undefined'"  style="min-height:30px;min-width:100%;width:100%"><p style="white-space:normal;font-weight:bold;color:black" id="p2">{{x.yijian}}<br>@{{x.name}}<br>{{x.content}}</p></div>
+                                </div>
+                                <div class="item">
+                                  <table class="tab-dash-table">
+                                    <tr>
+                                      <td>
+                                        <a  class="tab-dash-a"  href="">
+                                          <i class="icon ion-share"></i>
+                                          转发
+                                        </a>
+                                      </td>
+                                      <td>
+                                        <a href="" class="tab-dash-a">
+                                          <i class="icon ion-ios-chatboxes-outline"></i>
+                                          评论
+                                        </a>
+                                      </td>
+                                      <td>
+                                        <a href="" class="tab-dash-a">
+                                          <i class="icon ion-thumbsup"></i>
+                                          赞
+                                        </a>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>                               
+                                  <ion-infinite-scroll on-infinite="loadMore()" distance="1%">
+                                  </ion-infinite-scroll>
+                </ion-content>
+  </ion-view>

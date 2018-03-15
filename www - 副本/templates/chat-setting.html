@@ -1,0 +1,39 @@
+<ion-view view-title="{{information.name}}">
+        <ion-nav-bar class="bar-light"> 
+          <ion-nav-buttons side="left">
+              <a class="button icon-left ion-chevron-left button-clear button-dark" nav-direction="back" onclick="window.history.back();return false">返回</a>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+           <ion-content>
+                <ion-item class="item item-thumbnail-left">
+                    <img ng-src="{{information.img}}">
+                    <h2 style="color: #F26713;display:inline;font-size:20px;">{{information.name}}</h2>
+                    <!-- <i class="icon ion-chevron-right icon-accessory" style="position:absolute;right:5px;top:37%"></i>                     -->
+                    <div id="wrap" style="min-height:30px;min-width:100%;width:100%"><p style="white-space:normal;" >{{information.content}}</p></div>    
+                </ion-item>
+                <ul class="list">
+                        <li class="item item-toggle">
+                                置顶消息
+                                <label class="toggle toggle-balanced">
+                                  <input type="checkbox" ng-model="top.checked" ng-change="top1(information)">
+                                  <div class="track">
+                                    <div class="handle"></div>
+                                  </div>
+                                </label>
+                        </li>
+                        <li class="item item-toggle">
+                                屏蔽消息
+                                <label class="toggle toggle-balanced">
+                                  <input type="checkbox" ng-model="pushNotification.checked" ng-change="pushNotificationChange()">
+                                  <div class="track">
+                                    <div class="handle"></div>
+                                  </div>
+                                </label>
+                        </li>
+                  </ul>
+                <div class="item"> 
+                  <p style="white-space:normal;font-weight:bold;color:#444;font-size:15px;">清空聊天记录</p>
+                </div>
+           </ion-content> 
+      </ion-view>
+      

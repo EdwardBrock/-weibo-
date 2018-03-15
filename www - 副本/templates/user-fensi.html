@@ -1,0 +1,42 @@
+<ion-view view-title="粉丝">
+    <ion-nav-bar class="bar-light">
+        <ion-nav-buttons side="left">
+            <a class="button icon-left ion-chevron-left button-clear button-dark" nav-direction="back" ui-sref="tab.user">我</a>
+            </a>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <qrcode data="string"></qrcode>
+        <ion-item class="item-remove-animate item-avatar item-icon-right" style="min-height:2px;">
+            <img src="img/8.png" alt="" style="width:20px;height:20px;position:absolute;top:5px;">
+            <h3 style="position:absolute;top:5px;left:50px;">粉丝管理，就用粉丝服务</h3>
+            <i class="icon ion-chevron-right icon-accessory" style="color:gray"></i>
+        </ion-item>
+        <br>
+        <ion-item class="item-remove-animate item-avatar item-icon-right" style="min-height:2px;">
+            <h3 style="position:absolute;top:5px;left:10px;">好友关注动态</h3>
+            <i class="icon ion-chevron-right icon-accessory" style="color:orange"></i>
+        </ion-item>
+        <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="friend in friends">
+            <img ng-src="{{friend.img}}" style="border-radius:50%">
+            <h2 style="display:inline;font-weight:bold;">{{friend.name}}</h2>
+            <i style="position:absolute;right:10px;" ng-click="ChangeColor(friend,$index)" ng-class="{true: 'iconfont icon-yiguanzhu', false: 'iconfont icon-guanzhu'}[friend._selected || false]"></i>
+            <p>{{friend.content}}</p>
+        </ion-item>
+        <ion-item class="item-remove-animate item-avatar item-icon-right" style="min-height:2px;">
+            <h3 style="position:absolute;top:5px;left:15px;">全部粉丝</h3>
+            <i class="icon ion-chevron-right icon-accessory" style="color:gray"></i>
+        </ion-item>
+        <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="fen in fensi">
+            <img ng-src="{{fen.img}}" style="border-radius:50%">
+            <h2 style="display:inline;font-weight:bold;">{{fen.name}}</h2>
+            <i style="position:absolute;right:10px;" ng-click="ChangeColor(fen,$index)" ng-class="{true: 'iconfont icon-yiguanzhu', false: 'iconfont icon-guanzhu'}[fen._selected || false]"></i>
+            <p>{{fen.content}}</p>
+        </ion-item>
+    </ion-content>
+</ion-view>

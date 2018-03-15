@@ -1,0 +1,164 @@
+<ion-view view-title="我的赞">
+  <ion-nav-bar class="bar-light"> 
+    <ion-nav-buttons side="left">
+        <a class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="tab.user">我</a>
+        </a>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+          <a class="button button-clear icon ion-ios-more" ng-click="show3()"></a>
+        </ion-nav-buttons>
+  </ion-nav-bar>
+      <ion-tabs class="tabs-top tabs-striped tabs-light tabs-color-active-dark" >
+             <ion-tab title="赞">
+              <ion-view>
+                <ion-content>
+                    <div class="bar item-input-inset">
+                        <a class="button button-clear icon ion-search button-dark"  ng-click="data.search()"></a>
+                            <label class="item-input-wrapper" >
+                                <input type="search" placeholder="搜我的微博" ng-model="data.name">
+                                <i class="icon ion-close-circled placeholder-icon" style="vertical-align: middle;"
+                            on-tap="clearSearch()" ng-if="search.key.length"></i> 
+                            </label>
+                               
+                    </div>
+                    <div class="list list-inset " ng-repeat="info in infos |filter:data.criteria">
+                            <div class="item item-avatar-left item-icon-right"  >
+                              <img ng-src="{{info.img}}" style="border-radius:50%">
+                              <h2 style="display:inline;font-weight:bold">{{info.name}}</h2>
+                              <p>{{info.content}}</p>
+                              <div id="wrap" style="min-height:30px;min-width:100%;width:100%"><p style="white-space:normal;font-weight:bold;color:black" >{{info.content}}</p></div>
+                            </div>
+                            <div class="item">
+                              <table class="tab-dash-table">
+                                <tr>
+                                  <td>
+                                    <a  class="tab-dash-a"  href="">
+                                      <i class="icon ion-share"></i>
+                                      转发
+                                    </a>
+                                  </td>
+                                  <td>
+                                    <a href="" class="tab-dash-a">
+                                      <i class="icon ion-ios-chatboxes-outline"></i>
+                                      评论
+                                    </a>
+                                  </td>
+                                  <td>
+                                    <a href="" class="tab-dash-a">
+                                      <i class="icon ion-thumbsup"></i>
+                                      赞
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="list list-inset " ng-repeat="x in allpinglun |filter:data.criteria">
+                              
+                              <div class="item item-avatar-left item-icon-right"  >
+                                <img src="img/27.png" alt="" style="border-radius:50%">
+                                <h2 style="display:inline;font-weight:bold">Zhang</h2>
+                                <div id="wrap"  style="min-height:30px;min-width:100%;width:100%"><p style="white-space:normal;font-weight:bold;color:black" id="p1" >{{x.content2}}</p></div>
+                                <div id="wrap" ng-if="x.content2 == undefined"  style="min-height:30px;min-width:100%;width:100%"><p style="white-space:normal;font-weight:bold;color:black" id="p2">{{x.yijian}}@{{x.name}}{{x.content}}</p></div>
+                              </div>
+                              <div class="item">
+                                <table class="tab-dash-table">
+                                  <tr>
+                                    <td>
+                                      <a  class="tab-dash-a"  href="">
+                                        <i class="icon ion-share"></i>
+                                        转发
+                                      </a>
+                                    </td>
+                                    <td>
+                                      <a href="" class="tab-dash-a">
+                                        <i class="icon ion-ios-chatboxes-outline"></i>
+                                        评论
+                                      </a>
+                                    </td>
+                                    <td>
+                                      <a href="" class="tab-dash-a">
+                                        <i class="icon ion-thumbsup"></i>
+                                        赞
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                </ion-content>
+              </ion-view>  
+            </ion-tab>
+            <ion-tab title="收藏">
+                    <ion-view>
+                      <ion-content>
+                          <div class="list list-inset " ng-repeat="x in save">
+                              <div class="item item-avatar-left item-icon-right">
+                                  <img ng-src="{{x.img}}" style="border-radius:50%">
+                                <h2 style="display:inline;font-weight:bold">{{x.name}}</h2>
+                                <p>{{x.content}}</p>
+                              </div>
+                        
+                              <div class="item">
+                                <table class="tab-dash-table">
+                                  <tr>
+                                    <td>
+                                      <a  class="tab-dash-a"  href="">
+                                        <i class="icon ion-share"></i>
+                                        转发
+                                      </a>
+                                    </td>
+                                    <td>
+                                      <a href="" class="tab-dash-a">
+                                        <i class="icon ion-ios-chatboxes-outline"></i>
+                                        评论
+                                      </a>
+                                    </td>
+                                    <td>
+                                      <a href="" class="tab-dash-a">
+                                        <i class="icon ion-thumbsup"></i>
+                                        赞
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                      </ion-content>
+                    </ion-view>  
+                  </ion-tab>
+                  <ion-tab title="视频">
+                        <ion-view>
+                          <ion-content>
+                                <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" >
+                                    <img src="../img/28.png" style="width:30px;height:30px;">
+                                    <h2>上传视频</h2>
+                                    <a ui-sref="sp"><i class="icon ion-chevron-right icon-accessory"></i></a>
+                                </ion-item>
+                          </ion-content>
+                        </ion-view>  
+                </ion-tab>
+                <ion-tab title="文章">
+                        <ion-view>
+                          <ion-content>
+                                <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+                                    <img src="../img/29.png" style="width:30px;height:30px;">
+                                    <h2>写文章</h2>
+                                    <a ui-sref="wz"><i class="icon ion-chevron-right icon-accessory"></i></a>
+                                </ion-item>
+                          </ion-content>
+                        </ion-view>  
+                </ion-tab>
+                <ion-tab title="图片">
+                        <ion-view>
+                          <ion-content>
+                            <div ng-drop="true" ng-drop-success="dropComplete($index,$data,$event)" ng-repeat="item in content">
+                              <li ng-drag="true" ng-drag-data="item" >
+                                  姓名：{{item.name}}，年龄：{{item.age}}
+                              </li>
+                          </div>
+                          </ion-content>
+                        </ion-view>  
+                </ion-tab>
+        </ion-tabs>
+</ion-view>

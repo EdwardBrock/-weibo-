@@ -1,0 +1,25 @@
+<input type='button' ng-click='sortByType("age")' id="btnSortByAge" value="Sort By Age" />
+<input type='button' ng-click='sortByType("height")' id="btnSortByHeight" value="Sort By height" />
+<div>
+    <ol>
+        <li ng-repeat="item in data | orderBy:sort:desc">
+            <ul>
+                <li>name:
+                    <span ng-bind="item.name"></span>
+                </li>
+                <li> age:
+                    <span ng-bind="item.age"></span>
+                </li>
+                <li> sex:
+                    <span ng-bind="item.sex"></span>
+                </li>
+                <li> height:
+                    <span ng-bind="item.height"></span>
+                </li>
+                <li> description:
+                    <span ng-bind="item.description"></span>
+                </li>
+            </ul>
+        </li>
+    </ol>
+</div>

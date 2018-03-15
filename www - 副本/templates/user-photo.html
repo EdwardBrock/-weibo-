@@ -1,0 +1,57 @@
+<!-- <ion-view>
+    <ion-tabs class="tabs-icon-only tabs-positive tabs-top mortgagetab">  
+            <ion-tab title="等额本息" >  
+              <ion-content >  
+                <h1>等额本息内容</h1>  
+              </ion-content>  
+            </ion-tab>          
+            <ion-tab title="等额本金" >  
+              <ion-content >  
+                <h1>等额本金内容<span style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;"></h1></span>  
+              </ion-content>  
+            </ion-tab>              
+      </ion-tabs>  
+</ion-view> -->
+<!-- <ion-view>
+  <ion-tabs class="tabs-top tabs-striped tabs-light tabs-color-active-dark mortgagetab" >
+    <ion-tab title="首页">
+       <ion-content>
+       </ion-content>
+    </ion-tab>
+    <ion-tab title="上海">
+        <ion-content>
+        </ion-content>
+     </ion-tab>
+     <ion-tab title="明星">
+        <ion-content>
+        </ion-content>
+     </ion-tab>
+     <ion-tab title="直播">
+        <ion-content>
+        </ion-content>
+     </ion-tab>
+     <ion-tab title="时评">
+        <ion-content>
+        </ion-content>
+     </ion-tab>
+     <ion-tab title="教育">
+        <ion-content>
+        </ion-content>
+     </ion-tab>
+  </ion-tabs>
+</ion-view> -->
+<ion-view view-title="滑动tab"> 
+    <ion-content has-bouncing="false">
+    <i class="icon ion-chevron-left icon-accessory" style="position:absolute;top:15px;left:2px"></i>
+    <div style="display:flex;width:100%;">
+     <div style="flex:1;text-align: center;" class="tab_default" ng-repeat="d in tabNames" ng-click="activeSlide($index)" ng-class="slectIndex==$index ? 'tab_select' : '' ">
+      {{d}}
+     </div> 
+    </div> 
+    <ion-slide-box on-slide-changed="slideChanged(index)" active-slide="slideIndex" does-continue="false" show-pager="false">
+     <ion-slide ng-repeat="p in pages">
+      <div ng-include="p"></div>
+     </ion-slide>
+    </ion-slide-box>
+    </ion-content>
+   </ion-view>

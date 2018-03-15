@@ -1,0 +1,187 @@
+<ion-view view-title="我">
+    <ion-nav-bar class="bar-light">
+        <ion-nav-buttons side="left">
+            <button class="button button-clear " button-small >添加好友</button>
+          </ion-nav-buttons>
+          <ion-nav-buttons side="right">
+              <button class="button button-clear " button-small ng-click="show2()">设置</button>
+          </ion-nav-buttons>
+      </ion-nav-bar>
+<ion-content class="contentOne">
+        <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" nav-direction="forward" ui-sref="wo">
+            <img src="img/39.JPG" style="border-radius:50%">
+            <h2>V</h2>
+            <p>简介：我们生活在泥沼之中，但是有人依然仰望星空。</p>
+            <i class=" iconfont icon-crown" style="position:absolute;right:10px;top:30px;font-size:30px;"></i>
+          </ion-item>
+                <div class="item">
+                        <table class="tab-user-table" ng-repeat="user in user1">
+                                <tr>
+                                  <td >
+                                    <a class="tab-user-a" nav-direction="forward" ui-sref="all" class="button button-light icon ion-ios-restaurant">
+                                      <span>微博</span>
+                                    <strong>{{user.weibo}}</strong>
+                                  </a>
+                                  </td>
+                                  <td>
+                                    <a class="tab-user-a" ng-click="modal.show()">
+                                      <span>关注</span>
+                                      <strong>{{user.guanzhu}}</strong>
+                                    </a>
+                                  </td>
+                                  <td>
+                                    <a  class="tab-user-a" ui-sref="fensi">
+                                      <span>粉丝</span>
+                                      <strong>{{user.fensi}}</strong>
+                                    </a>
+                                  </td>
+                                </tr>
+                            </table>
+                </div>
+        <ion-list  class="list-inset">
+            <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/">
+              <img src="img/1.png">
+              <h2>签到领红包</h2>
+              <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+              <img src="img/2.png">
+              <h2>新的好友</h2>
+              <i class="icon ion-chevron-right icon-accessory"></i>
+              <a class="tab-user-a" ui-sref="friends" class="button button-light icon ion-ios-restaurant"><i class="badge assertive-bg light">66</i></a>
+            </ion-item>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/">
+              <img src="img/3.png">
+              <h2>我的相册</h2>
+              <i class="icon ion-chevron-right icon-accessory" ui-sref="photo"></i>
+              <a class="tab-user-a" ui-sref="friends" class="button button-light icon ion-ios-restaurant" ui-sref="photo"><i class="badge assertive-bg light">3</i></a>              
+            </ion-item>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ui-sref="zan">
+                <img src="img/4.png">
+                <h2>我的赞</h2> 
+                <span class="item-note" style="display:inline-block;position:absolute;top:15px;left:180px;">
+                    收藏移到这里
+                  </span>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/">
+                <img src="img/5.png">
+                <h2>微博钱包</h2>
+                <span class="item-note" style="display:inline-block;position:absolute;top:15px;left:180px;">
+                    领取你的暖冬福利
+                  </span>
+              <a class="tab-user-a" ui-sref="friends" class="button button-light icon ion-ios-restaurant" ui-sref="photo"><i class="badge assertive-bg light">1</i></a>              
+              <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/">
+                <img src="img/6.png">
+                <h2>微博运动</h2>
+                <span class="item-note" style="display:inline-block;position:absolute;top:15px;left:180px;">
+                    每天一万步...
+                  </span>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/">
+                <img src="img/7.png">
+                <h2>免流量</h2>
+                <span class="item-note" style="display:inline-block;position:absolute;top:15px;left:180px;">
+                    5G流量，免费领...
+                  </span>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/">
+                <img src="img/8.png">
+                <h2>粉丝服务</h2>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/">
+                <img src="img/9.png">
+                <h2>粉丝头条</h2>
+                <span class="item-note" style="display:inline-block;position:absolute;top:15px;left:180px;">
+                    推广博文及账号的利器
+                  </span>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/">
+                <img src="img/10.png">
+                <h2>客服中心</h2>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/">
+                <img src="img/11.png">
+                <h2>草稿箱</h2>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            
+          </ion-list>
+</ion-content>
+<script id="templates/modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-light">
+      <h1 class="title">我的好友</h1>
+      <!-- <ion-icon ios="ios-more" md="md-more"></ion-icon> -->
+      <a class="button icon-left ion-chevron-left button-clear button-dark"  ng-click="modal.hide()"></a>
+      <a class="button button-clear icon ion-ios-more" ng-click="show()"></a>
+    </ion-header-bar>
+    <ion-tabs class="tabs-top tabs-striped tabs-light tabs-color-active-dark" >
+        <ion-tab title="推荐">
+            <ion-view>
+              <ion-content>
+                  <ion-item  class="item-remove-animate item-avatar item-icon-right" style="min-height:2px;">
+                      <img src="img/8.png" alt="" style="width:20px;height:20px;position:absolute;top:5px;">
+                      <h3 style="position:absolute;top:5px;left:50px;">好友关注动态</h3>
+              </ion-item>
+                <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="user in user2" >
+                  <img ng-src="{{user.img}}" style="border-radius:50%">
+                  <h2 style="display:inline;font-weight:bold;">{{user.name}}</h2>
+                  <i style="position:absolute;right:10px;" ng-click="ChangeColor(friend,$index)" ng-class="{true: 'iconfont icon-yiguanzhu', false: 'iconfont icon-guanzhu'}[friend._selected || false]"></i>
+                  <p>{{user.content}}</p>
+                </ion-item>
+              </ion-content>
+            </ion-view>  
+    </ion-tab>
+    <ion-tab title="全部关注">
+            <ion-view>
+              <ion-content>
+                  <div class="bar item-input-inset">
+                      <a class="button button-clear icon ion-search button-dark"  ng-click="data.search()"></a>
+                          <label class="item-input-wrapper" >
+                              <input type="search" placeholder="搜全部关注" ng-model="data.name">
+                          </label> 
+                   </div>
+                   <div class="user_div">
+                      <div class="col"><img src="img/88.png" alt=""></div>
+                      <div class="col"><img src="img/89.png" alt=""></div>
+                      <div class="col"><img src="img/90.png" alt=""></div>
+                      <div class="col"><img src="img/91.png" alt=""></div>
+                 </div>
+                 <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="user in user2" >
+                    <img ng-src="{{user.img}}" style="border-radius:50%">
+                    <h2 style="display:inline;font-weight:bold;">{{user.name}}</h2>
+                    <i style="position:absolute;top:45%;right:10px;" ng-click="ChangeColor(friend,$index)" class="iconfont icon-yiguanzhu"></i>
+                    <p>{{user.content}}</p>
+                  </ion-item>
+              </ion-content>
+            </ion-view>  
+    </ion-tab>
+    <ion-tab title="最新发博">
+            <ion-view>
+              <ion-content>
+                  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+                      <img src="img/3.png" style="width:30px;height:30px;">
+                      <h2>上传图片</h2>
+                      <i class="icon ion-chevron-right icon-accessory" ></i>
+                  </ion-item>
+                  <div class="list list-inset " ng-repeat="info in infos |filter:data.criteria">
+                      <div class="item item-avatar-left item-icon-right"  >
+                        <img ng-src="{{info.img}}">
+                        <h2 style="display:inline;font-weight:bold">{{info.name}}</h2>
+                      </div>
+                  </div>
+              </ion-content>
+            </ion-view>  
+    </ion-tab>
+  </ion-tabs>
+  </ion-modal-view>
+</script>
+</ion-view> 

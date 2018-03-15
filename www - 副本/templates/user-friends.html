@@ -1,0 +1,28 @@
+<ion-view view-title="新的好友">
+        <ion-nav-bar class="bar-light">
+            <ion-nav-buttons side="left">
+                <a class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="tab.user"></a>
+                </a>
+              </ion-nav-buttons>
+          </ion-nav-bar>
+          <br>
+          <br>
+          <div class="card">
+                <div class="item item-text-wrap">
+                  您最近还没有新的好友！
+                </div>
+              </div>
+          <ion-list  class="list-inset">
+                <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="friend in friends" >
+                  <img ng-src="{{friend.img}}">
+                  <h2 style="display:inline;font-weight:bold;">{{friend.name}}</h2>
+                  <i  class="icon ion-ios-star icon-accessory" ng-click="ChangeColor(friend)" ng-class="{'selected':friend._selected}" ></i>
+                  
+                  <!-- <i  class="icon ion-ios-star icon-accessory" ng-click="ChangeColor(friend)" ng-class="selected?'color:red':''"
+                   ></i> -->
+                  <!-- <i class="icon ion-ios-star-outline icon-accessory" style="font-size: 20px" ng-click="isActive(1)" ng-if="i==0"></i>
+                  <i class="icon ion-ios-star icon-accessory" style="color:#F26713;font-size: 20px" ng-click="isActive(0)" ng-if="i==1"></i> -->
+                  <p>{{friend.content}}</p>
+                </ion-item>
+            </ion-list>
+    </ion-view>

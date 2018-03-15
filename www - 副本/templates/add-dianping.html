@@ -1,0 +1,27 @@
+ <ion-view view-title="点评">
+        <ion-nav-bar class="bar-light">
+            <ion-nav-buttons side="left" >
+                <button class="button button-clear " button-small ui-sref="add" >关闭</button>
+              </ion-nav-buttons>
+              <ion-nav-buttons side="right">
+                  <button class="button button-clear icon ion-ios-more " button-small ng-click="show()"></button>
+              </ion-nav-buttons>
+          </ion-nav-bar>
+    <ion-content>
+    <div class="bar item-input-inset">
+            <a class="button button-clear icon ion-search button-dark"  ng-click="data.search()"></a>
+            <label class="item-input-wrapper">
+              <input type="search" placeholder="搜索" ng-model="search">
+            </label>
+          </div>
+            <ion-list  class="list-inset">
+                    <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="movie in movies |filter:search | orderBy:sort:desc " >
+                      <img ng-src="{{movie.img}}">
+                      <h2 style="display:inline;font-weight:bold;">{{movie.name}}</h2>
+                      <i  class="icon ion-ios-star icon-accessory" ng-click="dian(movie)"></i>
+                      <p style="position:absolute;right:10px;bottom:6px;">{{movie.score}}</p>
+                      <p>{{movie.content}}</p>
+                    </ion-item>
+                </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,51 @@
+<ion-view view-title="消息设置">
+    <ion-nav-bar class="bar-light"> 
+      <ion-nav-buttons side="left">
+          <a class="button icon-left ion-chevron-left button-clear button-dark" nav-direction="back" ui-sref="tab.chats">返回</a>
+          </a>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+       <ion-content>            
+            <div class="list">
+                <div class="item item-divider"> 
+                    <p style="white-space:normal;font-weight:bold;color:black;" >通知提醒</p>
+                </div> 
+              <ion-radio ng-repeat="item in clientSideList" ng-value="item.value" ng-model="data.clientSide">
+                {{ item.text }}
+              </ion-radio>
+              <div class="item item-divider"> 
+                <p style="white-space:normal;font-weight:bold;color:gray;font-size:10px;" >{{ data.clientSide }}</p>
+              </div>
+            </div>
+            <div class="list">
+                <div class="item item-divider"> 
+                    <p style="white-space:normal;font-weight:bold;color:black;" >聊天提醒</p>
+                </div>
+          <ul class="list">
+                <li class="item item-toggle">
+                        消息
+                        <label class="toggle toggle-balanced">
+                          <input type="checkbox">
+                          <div class="track">
+                            <div class="handle"></div>
+                          </div>
+                        </label>
+                </li>
+                <li class="item">
+                    其他功能
+                    <i class="icon ion-chevron-right icon-accessory" style="position:absolute;right:10px;"></i>
+                </li>
+          </ul>
+          <div class="item item-divider"> 
+                <p style="white-space:normal;font-weight:bold;color:black;" >关注人动态</p>
+            </div>
+        <ion-toggle toggle-class="toggle-balanced" ng-model="emailNotification"  ng-true-value="'关闭后，你也不再接收关注人的动态'" ng-false-value="'开启接收他人动态'">
+          允许将我的动态推送给粉丝
+        </ion-toggle>
+        <div class="item item-divider"> 
+            <p style="white-space:normal;font-weight:bold;color:gray;font-size:10px;">{{emailNotification}}</p>
+        </div>
+
+       </ion-content> 
+  </ion-view>
+  

@@ -1,0 +1,40 @@
+<ion-view view-title="">
+        <ion-nav-bar class="bar-light"> 
+          <ion-nav-buttons side="left">
+              <a class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="tab.dash">首页</a>
+              </a>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <a class="button button-clear icon ion-ios-more" ng-click="show3()"></a>
+              </ion-nav-buttons>
+        </ion-nav-bar>
+            <ion-content>
+            <div style="background:url({{shouye.bimg}}) no-repeat;height:200px">
+                <div style="width:96px;height:96px;margin: 0 auto;border-radius:50%;overflow:hidden;">
+                    <img ng-src="{{shouye.img}}"  style="width:96px;height:96px;">
+                </div>
+                <p style="color:azure;position:absolute;left:40%;">{{shouye.name}}</p>
+                <p style="color:azure;position:absolute;left:35%;top:50%">关注&nbsp;{{shouye.guanzhu}}&nbsp;&nbsp;|</p>                
+                <p style="color:azure;position:absolute;left:52%;top:50%">&nbsp;&nbsp;粉丝&nbsp;{{shouye.fensi}}</p>
+                <p style="color:azure;font-size:10px;position:absolute;left:33%;top:60%;">微博认证&nbsp;{{shouye.renzheng}}</p>                                               
+            </div>
+            <div class="button-bar">
+                    <a class="button button-clear button-dark"  ng-click="changeA()" ng-class="flag =='1'?'clickon':'bg-button'">主页</a>
+                    <a class="button button-clear button-dark"  ng-click="changeB()" ng-class="flag =='2'?'clickon':'bg-button'">微博</a>
+                    <a class="button button-clear button-dark"  ng-click="changeC()" ng-class="flag =='3'?'clickon':'bg-button'">头条</a>
+                    <a class="button button-clear button-dark"  ng-click="changeD()" ng-class="flag =='4'?'clickon':'bg-button'">相册</a>
+                  </div>
+                  <div  style="width:100%; height:420px;border:none;broder-bottom:2px soild RGB(255,255,255);" ng-if="flag=='1'" ng-repeat="x in find">
+                      
+                  </div>
+                  <div  style="width:100%; height:420px;border:none;broder-bottom:2px soild RGB(255,255,255);" ng-if="flag=='2'" ng-repeat="x in find">
+                      
+                  </div>
+                  <div  style="width:100%; height:420px;border:none;broder-bottom:2px soild RGB(255,255,255);" ng-if="flag=='3'" ng-repeat="x in find">
+                      
+                  </div>
+                  <div  style="width:100%; height:420px;border:none;broder-bottom:2px soild RGB(255,255,255);" ng-if="flag=='4'" ng-repeat="x in find">
+                      
+                  </div>              
+            </ion-content>   
+</ion-view >

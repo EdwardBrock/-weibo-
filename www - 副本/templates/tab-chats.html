@@ -1,0 +1,89 @@
+<ion-view>
+    <ion-nav-bar class="bar-light" >
+        <ion-nav-buttons side="left">
+            <button class="button button-clear " button-small >发现群</button>
+          </ion-nav-buttons>
+          <ion-nav-buttons side="right">
+              <a class="button button-clear icon ion-ios-chatbubble-outline"></a>
+          </ion-nav-buttons>
+      </ion-nav-bar>
+        <ion-tabs class="tabs-top tabs-striped tabs-light tabs-color-active-dark" >
+            <ion-tab title="通知">
+                <ion-view>
+                  <ion-content>
+                      <ion-list >
+                          
+                                  <ion-item ng-repeat="tz in tzmessages | filter:data.criteria " class="item item-thumbnail-left" on-hold="onHold()">
+                                          <img ng-src="{{tz.img}}">
+                                          <h2 style="display:inline;font-weight:bold">{{tz.name}}</h2>
+                                          <br>
+                                          <br>
+                                          <p>{{tz.content}}</p>
+                                    <ion-option-button class="button-assertive"
+                                                       ng-click="delete(tz)">
+                                      删除
+                                    </ion-option-button>
+                                  </ion-item>
+                          
+                                </ion-list>
+                  </ion-content>
+                </ion-view>  
+              </ion-tab>
+        <ion-tab title="聊天">
+            <ion-view>
+              <ion-content>
+                  <div class="bar item-input-inset">
+                      <a class="button button-clear icon ion-search button-dark"  ng-click="data.search()"></a>
+                          <label class="item-input-wrapper" >
+                              <input type="search" placeholder="搜我的微博" ng-model="data.name">
+                          </label> 
+                   </div>
+                   <ion-list>
+                              <ion-item  ng-repeat="information in informations | filter:data.criteria" class="item item-thumbnail-left" href="#/tab/chats/{{information.id}}">
+                                  <img ng-src="{{information.img}}" style="border-radius:50%">
+                                    <h2 style="display:inline;font-weight:bold">{{information.name}}</h2>
+                                      <p>{{information.content}}</p>
+                                        <ion-option-button class="button-assertive" ng-click="remove(information)"> 
+                                               删除
+                                       </ion-option-button>
+                                       <ion-option-button class="button-calm" ng-click="share(information)">
+                                               置顶
+                                      </ion-option-button>
+                              </ion-item>     
+                  </ion-list>
+                  <br/>
+                  <br/>
+              </ion-content>
+            </ion-view>  
+          </ion-tab>
+    </ion-tabs>
+    <!-- <button class="button button-clear " button-small>通知</button>
+    <button class="button button-clear " button-small>聊天</button> -->
+    <ion-nav-buttons side="right">
+      <button class="button button-clear icon ion-ios-chatbubble-outline"  ng-click="openPopover($event);">
+      </button>
+    </ion-nav-buttons>
+    <ion-content>
+      <ion-refresher>
+      </ion-refresher>
+      <div class=" item-input-inset">
+        <label class="item-input-wrapper">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="search" placeholder="搜索">
+        </label>
+      </div>
+  
+      <script id="my-popover.html" type="text/ng-template">
+        <ion-popover-view style="top:50px;padding:1px;height:100px">
+          <ion-list style="width:100%;height:20px;">
+            <ion-item class="item item-icon-left light item-pop">
+              <img src="img/xiaoxi.png" style="width:20px;height:20px"><a href="" style="text-decoration:none;color:#ccc">&nbsp&nbsp 发起聊天</a></i>
+            </ion-item>
+            <ion-item class="item item-icon-left light item-pop" ui-sref="xiaoxi" nav-direction="forward" ng-click="closePopover()">
+              <img src="img/shezhi.png" style="width:20px;height:20px"><a href="" style="text-decoration:none;color:#ccc">&nbsp&nbsp 消息设置</a></i>
+            </ion-item>    
+        </ion-list>
+        </ion-popover-view>
+      </script> 
+  </ion-view>
+  

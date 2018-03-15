@@ -1,0 +1,27 @@
+<ion-view view-title="写文章">
+        <ion-nav-bar class="bar-light">
+                <ion-nav-buttons side="left">
+                    <a class="button icon-left ion-chevron-left button-clear button-dark" onclick="window.history.back();return false"></a>
+                    </a>
+                  </ion-nav-buttons>
+                  <ion-nav-buttons side="right">
+                        <button class="button button-clear " button-small ng-click="todoAdd()">完成</button>
+                    </ion-nav-buttons>
+              </ion-nav-bar>
+    <ion-content> 
+                <br>
+                <textarea placeholder="标题"ng-model="data.todoInput" rows="2" cols="30" style="height:15%;width:100%"></textarea>
+                <textarea placeholder="正文"ng-model="data.todoInput2" rows="10" cols="30" style="height:15%;width:100%"></textarea>
+            <br>
+            <div class="list list-inset ">
+                <div class="item item-avatar-left item-icon-right"  ng-repeat="x in todoList " >
+                    <input type="checkbox" ng-model="x.done">
+                    <h2 style="display:inline;font-weight:bold">{{x.todoText}}</h2>
+                    <p style="white-space:normal;font-weight:bold;color:black" >{{x.todoText2}}</p>
+                </div>
+            </div>
+            <button ng-click="remove()" class="button button-full button-gray">删除记录</button>
+            
+        
+    </ion-content>
+</ion-view>

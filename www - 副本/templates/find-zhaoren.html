@@ -1,0 +1,15 @@
+<ion-view view-title="滑动tab"> 
+    <ion-content has-bouncing="false">
+    <i class="icon ion-chevron-left icon-accessory" style="position:absolute;top:15px;left:2px" nav-direction="back" ui-sref="tab.find"></i>
+    <div class="zhaoren_div">
+     <div style="flex:1;text-align: center;" class="col" ng-repeat="d in tabNames" ng-click="activeSlide($index)" ng-class="slectIndex==$index ? 'tab_select' : '' ">
+      {{d}}
+     </div> 
+    </div> 
+    <ion-slide-box on-slide-changed="slideChanged(index)" active-slide="slideIndex" does-continue="false" show-pager="false">
+     <ion-slide ng-repeat="p in pages">
+      <div ng-include="p"></div>
+     </ion-slide>
+    </ion-slide-box>
+    </ion-content>
+   </ion-view>

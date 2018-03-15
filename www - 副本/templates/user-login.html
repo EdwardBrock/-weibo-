@@ -1,0 +1,62 @@
+<ion-view view-title="">
+    <ion-nav-bar class="bar-light">
+        <ion-nav-buttons side="left">
+            <button class="button button-clear " button-small >关闭</button>
+          </ion-nav-buttons>
+          <ion-nav-buttons side="right">
+              <button class="button button-clear " button-small ui-sref="register">注册</button>
+          </ion-nav-buttons>
+      </ion-nav-bar>
+
+      
+    <ion-content class="has-subheader">
+        <div style="width:96px;height:96px;margin: 0 auto;border-radius:50%;overflow:hidden">
+            <img src="img/39.JPG" alt="" style="width:96px;height:96px;">
+        </div>   
+        <form name="myfastForm" ng-show="!isloginModel" ng-submit="signIn()" class="user">
+            <div class="list list-inset removePM">
+                <label class="item item-input">
+                    <span class="input-label ion-android-people">&nbsp;&nbsp;手机号</span>
+                    <!-- <input type="text" name="txtphone" placeholder="请输入手机号" class="two" ng-model="user.phone" required> -->
+                    <input type="text" name="name" placeholder="请输入手机号" class="two" ng-model="user.name" required>
+                    
+                </label>
+                <label class="item  item-input">
+                    <span class="input-label ion-android-lock">&nbsp;&nbsp;密码</span>
+                    <!-- <input type="password" name="txtvercode" class="three" style="flex:120px;" placeholder="请输入密码" ng-model="user.vercode" required>                     -->
+                    <input type="password" name="psw" class="three" style="flex:120px;" placeholder="请输入密码" ng-model="user.psw" required>
+                </label>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-positive loginBtn"  ng-disabled="myfastForm.name.$invalid || myfastForm.psw.$invalid">
+                    <b>登&nbsp;&nbsp;录</b>
+                </button>
+            </div>
+        </form>
+    </ion-content>
+    <script>
+			// $('button.loginBtn').on('click',function(){
+			// 	var name = $('.user input[name=name]').val();
+			// 	var psw = $('.user input[name=psw]').val();
+			// 	var user={
+			// 		name:name,
+			// 		psw:psw
+			// 	};
+			// 	// console.log(user);
+
+			// 	$.getJSON('http://localhost:3000/user/findByName?name='+name,function(data){
+            //         console.log(data[0])
+			// 		if(data[0] == undefined){
+			// 			alert("没有此用户");
+			// 		}else{
+			// 			var pswDB = data[0].psw;
+			// 			if(psw==pswDB){
+			// 				window.location='http://localhost:8100/#/tab/user';
+			// 			}else{
+			// 				alert("密码错误");
+			// 			}
+			// 		}
+			// 	}); 
+			// });
+    </script>
+</ion-view>

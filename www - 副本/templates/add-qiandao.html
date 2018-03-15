@@ -1,0 +1,149 @@
+<ion-view view-title="采购运输">
+  <style type="text/css">
+    input::-ms-input-placeholder {
+      text-align: right;
+    }
+
+    input::-webkit-input-placeholder {
+      text-align: right;
+    }
+
+    #inputposition::-ms-input-placeholder {
+      text-align: left;
+    }
+
+    #inputposition::-webkit-input-placeholder {
+      text-align: left;
+    }
+
+    .item-complex .item-content,
+    .item-radio .item-content {
+      padding: 0;
+    }
+  </style>
+  <ion-nav-bar class="bar-dark">
+    <ion-nav-buttons side="left">
+      <a class="button button-clear icon ion-chevron-left" ui-sref="add">
+        返回
+      </a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+    <ion-tabs class="tabs-top tabs-striped  tabs-color-active-assertive">
+      <ion-tab title="未生成进门计划" on-select="changePlan(' ')" style="color:red;background-color: red;font-size:30px">
+        <ion-view>
+          <ion-content class="bg">
+            88888888888
+          </ion-content>
+        </ion-view>
+      </ion-tab>
+      <ion-tab title="已生成进门计划" on-select="groupByCheck('1')">
+        <ion-view>
+          <ion-content class="bg">
+            9999999999999999
+          </ion-content>
+        </ion-view>
+      </ion-tab>
+    </ion-tabs>
+
+    <!--Modal-->
+    <script id="ironModal.html" type="text/ng-template">
+        <div class="modal">
+          <ion-header-bar style="background-color:RGB(68,68,68) ">
+            <a class="button button-lightblue button-small button-icon ion-close button-clear" ng-click="closeModal()"></a>
+            <h1 class="title" style="color:white">新增物流</h1>
+          </ion-header-bar>
+          <ion-content class="stable-bg">
+            <br>
+            <form action="" name="creatForm">
+            <div class="list" style="font-family: '微软雅黑'">
+              <label class="item item-input" ng-class="{ 'has_error' : creatForm.turck_no.$invalid && !creatForm.turck_no.$pristine }">
+                <i class="icon ion-ios-medical orange" style="font-size:14px"></i>
+                <span class="input-label"> &nbsp;车号 </span>
+                <input type="text" name="turck_no" placeholder="请输入车号" ng-model="creat.truck_no">
+              </label>
+              <p ng-show="creatForm.turck_no.$invalid && !creatForm.turck_no.$pristine" class="show_error">此项为必填项</p>
+              <br>
+  
+              <div class="item item-input item-select" ng-class="{ 'has_error' : x }">
+                <i class="icon ion-ios-medical orange" style="font-size:14px"></i>
+                <div class="input-label">
+                  &nbsp;进门岗
+                </div>
+                <select ng-model="creat.post" ng-change="change(creat.post)" ng-options="p.CODE_DESC_1_CONTENT for p in optionOne" required>
+                  <option value="">请选择进门岗</option>
+                </select>
+              </div>
+              <p ng-show="x" class="show_error">此项为必填项</p>
+  
+              <br>
+  
+              <div class="item item-input item-select">
+                <i class="icon ion-ios-medical orange" style="font-size:14px"></i>
+                <div class="input-label">
+                  &nbsp;类型
+                </div>
+                <select ng-model="creat.type" ng-change="change(creat.type)" ng-options="t.CODE_DESC_1_CONTENT for t in optionTYPE" required>
+                  <option value="">请选择类型</option>
+                </select>
+              </div>
+              <p ng-show="x" class="show_error">此项为必填项</p>
+              <br>
+  
+              <div class="item item-input item-select">
+                <i class="icon ion-ios-medical orange" style="font-size:14px"></i>
+                <div class="input-label">
+                  &nbsp;物料大类
+                </div>
+                <select ng-model="creat.goods_kind" ng-change="change(creat.goods_kind)" ng-options="g.CODE as g.CODE_DESC_1_CONTENT for g in optionGood" required>
+                  <option value="">请选择物料大类</option>
+                </select>
+              </div>
+              <p ng-show="x" class="show_error">此项为必填项</p>
+              <br>
+  
+              <label class="item item-input" >
+                <i class="icon ion-ios-medical light" style="font-size:14px"></i>
+                <span class="input-label"> &nbsp;品名中文 </span>
+                <input type="text"  name="PROD_CNAME" placeholder="请输入品名中文"  ng-model="creat.PROD_CNAME"  >
+              </label>
+              <br>
+  
+              <label class="item item-input" >
+                <i class="icon ion-ios-medical light" style="font-size:14px"></i>
+                <span class="input-label"> &nbsp;合同号 </span>
+                <input type="text" placeholder="请输入合同号" ng-model="creat.CONTRACT_ID">
+              </label>
+  
+              <br>
+  
+             <!-- <div class="item item-input item-select">
+                <i class="icon ion-ios-medical light" style="font-size:14px"></i>
+                <div class="input-label">
+                  &nbsp;磅站
+                </div>
+                <select ng-model="creat.pound" ng-options="o.CODE_DESC_1_CONTENT for o in optionTwo "  >
+                  <option value="">请选择磅站</option>
+                </select>
+              </div>
+              <br>-->
+  
+              <label class="item item-input" ng-class="{ 'has_error' : creatForm.end_time.$invalid && !creatForm.end_time.$pristine }">
+                <i class="icon ion-ios-medical orange" style="font-size:14px"></i>
+                <span class="input-label"> &nbsp;有效期 </span>
+                <input type="date" placeholder="请输入有效期" name="end_time" ng-model="creat.end_time" min="{{yesterday}}" required>
+              </label>
+              <p ng-show="creatForm.end_time.$invalid && !creatForm.end_time.$pristine" class="show_error">日期必须大于当前日期</p>
+  
+              <br>
+            </div>
+            <div style="padding:0 20px">
+              <a class="button button-block button-lightblue" style="margin-top:15px;" ng-click="creatTransport(creat,creatForm.$valid)">提交</a>
+            </div>
+  
+            </form>
+          </ion-content>
+        </div>
+      </script>
+
+  </ion-content>
+</ion-view>

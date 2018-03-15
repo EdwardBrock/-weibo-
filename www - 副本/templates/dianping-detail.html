@@ -1,0 +1,34 @@
+<ion-view view-title="{{movie.name}}">
+        <ion-header-bar class="bar bar-header bar-light">
+                <h1 class="title">转发微博</h1>
+                <a class="button icon-left button-clear button-dark" ui-sref="dianping">取消</a>
+                <a class="button button-clear" ng-click="fasong()">发送</a>
+            </ion-header-bar>
+<ion-content>
+        <ion-list  class="list-inset">
+                <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+                  <img ng-src="{{movie.img}}">
+                  <h2 style="display:inline;font-weight:bold;">{{movie.name}}</h2>
+                </ion-item>
+            </ion-list>
+            <div class="item row row-wrap row-no-padding" style="height: 50px;border: none;padding-left: 10px;">
+                <div class="col col-center">
+                    <p>
+                        <div style="border-radius:30%;border:1px solid rgb(75, 66, 62);position:absolute;left:20%;top:30%">{{val}}</div>
+                        <a style="margin-left:40%;">
+                            <i ng-class="{true: 'icon ion-ios-star energized', false: 'icon ion-ios-star-outline'}[service[0]]"
+                               ng-click="chooseService(0)" style="font-size: 30px;"></i>
+                            <i ng-class="{true: 'icon ion-ios-star energized', false: 'icon ion-ios-star-outline'}[service[1]]"
+                               ng-click="chooseService(1)" style="font-size: 30px;"></i>
+                            <i ng-class="{true: 'icon ion-ios-star energized', false: 'icon ion-ios-star-outline'}[service[2]]"
+                               ng-click="chooseService(2)" style="font-size: 30px;"></i>
+                            <i ng-class="{true: 'icon ion-ios-star energized', false: 'icon ion-ios-star-outline'}[service[3]]"
+                               ng-click="chooseService(3)" style="font-size: 30px;"></i>
+                            <i ng-class="{true: 'icon ion-ios-star energized', false: 'icon ion-ios-star-outline'}[service[4]]"
+                               ng-click="chooseService(4)" style="font-size: 30px;"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>  
+</ion-content>
+</ion-view>

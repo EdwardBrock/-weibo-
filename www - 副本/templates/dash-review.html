@@ -1,0 +1,123 @@
+<ion-view view-title="{{shouye.name}}">
+  <ion-nav-bar class="bar-light"> 
+    <ion-nav-buttons side="left">
+        <a class="button icon-left ion-chevron-left button-clear button-dark" nav-direction="back" ui-sref="tab.dash">首页</a>
+        </a>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+          <a class="button button-clear icon ion-ios-more"></a>
+        </ion-nav-buttons>
+      
+  </ion-nav-bar>
+<ion-tabs class="tabs-top tabs-striped tabs-light tabs-color-active-dark" >
+  <ion-tab title="转发{{shouye.select1}}">
+   <ion-view>
+     <ion-content>
+      <ion-list>
+        <ion-item ng-repeat="dash in dashs" class="item item-thumbnail-left">
+            <img ng-src="{{dash.img}}" style="border-radius:50%">
+              <h2 style="display:inline;font-weight:bold">{{dash.name}}</h2>
+              <br>
+              <br>
+                <p>{{dash.content}}</p>
+                <p>{{dash.data}}</p>
+        </ion-item>     
+    </ion-list>
+    <div class="item">
+      <table class="tab-dash-table">
+        <tr>
+          <td>
+            <a  class="tab-dash-a"  href="">
+              <i class="icon ion-share"></i>
+              转发
+            </a>
+          </td>
+          <td>
+            <a href="" class="tab-dash-a">
+              <i class="icon ion-ios-chatboxes-outline"></i>
+              评论
+            </a>
+          </td>
+          <td>
+            <a href="" class="tab-dash-a">
+              <i class="icon ion-thumbsup"></i>
+              赞
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+     </ion-content>
+   </ion-view>  
+ </ion-tab>
+ <ion-tab title="评论{{shouye.select2}}">
+         <ion-view>
+           <ion-content>
+              <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="x in todoList ">
+                  <img ng-src="{{shouye.img}}">
+                  <h2 style="color: rgb(112, 106, 103);display:inline">{{shouye.name}}</h2>
+                <div id="wrap" style="min-height:30px;min-width:300px;width:100%"><p style="color: rgb(15, 15, 15)" >{{x.todoText}}</p></div>  
+                <p>{{now|date:'yyyy/MM/dd'}}</p>              
+                  <i class="icon ion-right" ><input type="checkbox" ng-model="x.done"></i>
+              </ion-item>
+            <!-- <div class="item item-avatar-left"   type="item-text-wrap">
+              <img ng-src="{{shouye.img}}">
+              <h2 style="color: #F26713;display:inline">{{shouye.name}}</h2>
+              <div id="wrap" style="min-height:30px;min-width:300px;width:100%"><p style="white-space:normal;" >{{shouye.content}}</p></div>
+            </div> -->
+            <!-- <div class="item item-avatar-left" type="item-text-wrap" ng-repeat="x in todoList ">
+                <img ng-src="{{shouye.img}}">
+                <h2 style="color: rgb(112, 106, 103);display:inline">{{shouye.name}}</h2>
+                <input type="checkbox" ng-model="x.done">
+                <i class="icon ion-chevron-right icon-accessory" ></i>                
+                <div id="wrap" style="min-height:30px;min-width:300px;width:100%"><p style="color: rgb(15, 15, 15)" >{{x.todoText}}</p></div>
+              </div> -->
+            <div class="item22">
+              <table class="tab-dash-table">
+                <tr>
+                  <td>
+                    <a  class="tab-dash-a"  href="">
+                      <i class="icon ion-share"></i>
+                      转发
+                    </a>
+                  </td>
+                  <td>
+                    <a class="tab-dash-a" ng-click="addcomment()">
+                      <i class="icon ion-ios-chatboxes-outline"></i>
+                      评论
+                    </a>
+                  </td>
+                  <td>
+                    <a href="" class="tab-dash-a">
+                      <i class="icon ion-thumbsup"></i>
+                      赞
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+           </ion-content>
+         </ion-view>  
+       </ion-tab>
+       <ion-tab title="">
+             <ion-view>
+               <ion-content>
+                    
+               </ion-content>
+             </ion-view>  
+     </ion-tab>
+     <ion-tab title="">
+             <ion-view>
+               <ion-content>
+                     
+               </ion-content>
+             </ion-view>  
+     </ion-tab>
+     <ion-tab title="赞{{shouye.select3}}">
+             <ion-view>
+               <ion-content>
+
+               </ion-content>
+             </ion-view>  
+     </ion-tab>
+</ion-tabs>

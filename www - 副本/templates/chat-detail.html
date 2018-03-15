@@ -1,0 +1,45 @@
+<ion-view view-title="{{information.name}}">
+    <ion-pane class="messaging-view">
+        <ion-nav-bar class="bar-light">
+            <ion-nav-buttons side="left">
+                <a class="button icon-left ion-chevron-left button-clear button-dark" onclick="window.history.back();return false">返回</a>
+                </a>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <a class="button button-clear" ui-sref="setting({informationId:information.id})">设置</a>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <br>
+        <ion-content class="content-stable" on-swipe-left="hideTime = false" on-swipe-right="hideTime = true">
+            <ion-list>
+                <ion-item class="item item-thumbnail-left">
+                    <img ng-src="{{information.img}}">
+                    <h2 style="color: #F26713;display:inline;font-size:20px;">{{information.name}}</h2>
+                    <div id="wrap" style="min-height:30px;min-width:100%;width:100%">
+                        <p style="white-space:normal;">{{information.content}}</p>
+                    </div>
+                    <!-- <div id="wrap" style="min-height:30px;min-width:300px;width:100%"><p style="white-space:normal;" >{{information.content}}</p></div>     -->
+                </ion-item>
+            </ion-list>
+            <div ng-repeat="message in messages" ng-class="{other: message.userId != myId}" class="messages">
+
+                <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
+                    <span>{{ message.text }}</span>
+                </div>
+
+                <div class="time" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
+
+
+            </div>
+        </ion-content>
+        <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+            <label class="item-input-wrapper">
+                <input type="text" placeholder="写点什么" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()"
+                    on-blur="inputDown()" />
+            </label>
+            <button class="button button-clear" ng-click="sendMessage()">
+                发送
+            </button>
+        </ion-footer-bar>
+    </ion-pane>
+</ion-view>

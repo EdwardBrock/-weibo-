@@ -1,0 +1,63 @@
+<div>
+    <h1 style="position:absolute;top:50px;left:20px;"> {{ now|date:'dd'}}</h1>
+    <p id="ShowDay" style="float:left;margin-left:70px;margin-top:50px">{{xingqi}}</p>
+    <p style="position:absolute;top:70px;left:70px;">{{now|date:'MM/yyyy'}}</p>
+    <p style="position:absolute;top:100px;left:20px;">上海：{{weather1}}℃ &nbsp;{{weather2}}</p>
+    <!-- <ion-spinner icon="dots" class="spinner-dark" style="position:absolute;top:95px;left:115px;"></ion-spinner> -->
+    <img src="img/weather/{{img}}.png " alt="" style="position:absolute;width:100px;height:90px;top:40px;right:10px;">
+</div>
+<div class="findImg7 animated bounceInUp">
+    <div class="col ">
+        <a>
+            <img style="border-radius:50%" src="img/54.png" alt="" ng-click="modal.show()">
+        </a>
+        <br>文字</div>
+    <div class="col  ">
+        <img style="border-radius:50%" src="img/55.png" alt="">
+        <br>拍摄</div>
+    <div class="col  ">
+        <img style="border-radius:50%" src="img/56.png" alt="">
+        <br>相册</div>
+    <div class="col  ">
+        <img style="border-radius:50%" src="img/57.png" alt="">
+        <br>直播</div>
+</div>
+<div class="findImg6 animated bounceInUp">
+    <div class="col  ">
+        <a ui-sref="music">
+            <img style="border-radius:50%" src="img/58.png" alt="">
+        </a>
+        <br>光影秀</div>
+    <div class="col  ">
+        <a ui-sref="question">
+            <img style="border-radius:50%" src="img/59.png" alt="">
+        </a>
+        <br>提问</div>
+    <div class="col  ">
+        <a ui-sref="">
+            <img style="border-radius:50%" src="img/60.png" alt="">
+        </a>
+        <br>签到</div>
+    <div class="col  ">
+        <a ui-sref="comment">
+            <img style="border-radius:50%" src="img/61.png" alt="">
+        </a>
+        <br>点评</div>
+</div>
+<a class="button button-icon icon ion-ios-close" style="position:absolute;bottom:10px;left:48%" ng-click="fan()"></a>
+</script>
+<script id="templates/modal.html" type="text/ng-template">
+    <ion-modal-view >
+      <ion-header-bar class="bar bar-header bar-light">
+        <h1 class="title">发微博</h1>
+        <a class="button icon-left button-clear button-dark" ng-click="modal.hide()" >取消</a>
+        <a class="button button-clear" ng-click="fasong1()" >发送</a>
+      </ion-header-bar>
+              <ion-view>
+                <ion-content>
+                    <textarea name="content2" id="fenxiang" placeholder="分享新鲜事..." style="height:15%;width:100%" rows="10" cols="30"></textarea>                 
+                </ion-content>
+              </ion-view>  
+    </ion-modal-view>
+
+  </script>

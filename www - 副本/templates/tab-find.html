@@ -1,0 +1,126 @@
+<ion-view view-title="发现">
+    <ion-nav-bar class="bar-light">
+
+    </ion-nav-bar>
+    <ion-content>
+        <div class=" item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="大家正在搜......">
+            </label>
+        </div>
+        <div class="findImg1">
+            <ion-slide-box auto-play="true" does-continue="true" slide-interval=2000>
+                <ion-slide>
+                    <div class="box banner">
+                        <img src="img/22.png" /> </div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box banner">
+                        <img src="img/23.png" /> </div>
+                </ion-slide>
+                <ion-slide on-slide-changed="slideHasChanged(index)">
+                    <div class="box banner">
+                        <img src="img/24.png" /> </div>
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+        <div class="findImg2">
+            <div class="col">
+                <a ui-sref="discover" nav-direction="forward">
+                    <img src="img/12.png" alt="">
+                </a>
+                <br>发现</div>
+            <div class="col">
+                <a ui-sref="shanghai" nav-direction="forward">
+                    <img src="img/13.png" alt="">
+                </a>
+                <br>上海</div>
+            <div class="col">
+                <a ui-sref="game" nav-direction="forward">
+                    <img src="img/14.png" alt="">
+                </a>
+                <br>游戏</div>
+            <div class="col">
+                <img src="img/15.png" alt="">
+                <br>直播</div>
+            <div class="col">
+                <img src="img/16.png" alt="">
+                <br>电影</div>
+        </div>
+        <div class="findImg3">
+            <div class="col">
+                <a href="#/dash">
+                    <img src="img/17.png" alt="">
+                </a>
+                <br>尤物志</div>
+            <div class="col">
+                <a ui-sref="saishi" nav-direction="forward">
+                    <img src="img/18.png" alt="">
+                </a>
+                <br>赛事</div>
+            <div class="col">
+                <img src="img/19.png" alt="">
+                <br>财经</div>
+            <div class="col">
+                <img src="img/20.png" alt="">
+                <br>V峰会</div>
+            <div class="col">
+                <a ui-sref="more" nav-direction="forward">
+                    <img src="img/21.png" alt="">
+                </a>
+                <br>更多</div>
+        </div>
+        <hr>
+        <div class="findImg4">
+            <div class="col">
+                <img src="img/48.png" style="width:20px;" alt="">30年不重要</div>
+            <div class="col">
+                <img src="img/49.png" style="width:20px;" alt="">手机拍大片</div>
+        </div>
+        <div class="findImg5">
+            <div class="col">
+                <img src="img/50.png" style="width:20px;" alt="">冒个泡。。</div>
+            <div class="col">热门/超级话题</div>
+        </div>
+
+        <hr>
+        <div class="button-bar">
+            <a class="button button-clear button-dark" ng-click="changeA()" ng-class="flag =='1'?'clickon':'bg-button'">视频</a>
+            <a class="button button-clear button-dark" ng-click="changeB()" ng-class="flag =='2'?'clickon':'bg-button'">头条</a>
+            <a class="button button-clear button-dark" ng-click="changeC()" ng-class="flag =='3'?'clickon':'bg-button'">榜单</a>
+            <a class="button button-clear button-dark" ng-click="changeD()" ng-class="flag =='4'?'clickon':'bg-button'">本地</a>
+        </div>
+        <div style="width:100%; height:420px;border:none;broder-bottom:2px soild RGB(255,255,255);" ng-if="flag=='1'">
+            <video style="width:100%;height:300px;" src="img/1.mp4" controls="controls"></video>
+        </div>
+        <div style="width:100%; height:420px;border:none;broder-bottom:2px soild RGB(255,255,255);" ng-if="flag=='2'" ng-repeat="x in find">
+            <div class="item item-avatar-left" type="item-text-wrap">
+                <img ng-src="{{x.img2}}">
+                <h2 style="color: #F26713;display:inline">{{x.name2}}</h2>
+                <div id="wrap" style="min-height:30px;min-width:100%;;width:100%">
+                    <p style="white-space:normal;">{{x.content2}}</p>
+                </div>
+            </div>
+        </div>
+        <div style="width:100%; height:420px;border:none;broder-bottom:2px soild RGB(255,255,255);" ng-if="flag=='3'" ng-repeat="x in find">
+            <div class="item item-avatar-left" type="item-text-wrap">
+                <img ng-src="{{x.img}}">
+                <h2 style="color: #F26713;display:inline">{{x.name}}</h2>
+                <div id="wrap" style="min-height:30px;min-width:100%;width:100%">
+                    <p style="white-space:normal;">{{x.content}}</p>
+                </div>
+            </div>
+        </div>
+        <div style="width:100%; height:420px;border:none;broder-bottom:2px soild RGB(255,255,255);" ng-if="flag=='4'" ng-repeat="x in find">
+            <div class="item item-avatar-left" type="item-text-wrap">
+                <img ng-src="{{x.img1}}">
+                <h2 style="color: #F26713;display:inline">{{x.name1}}</h2>
+                <div id="wrap" style="min-height:30px;min-width:100%;width:100%">
+                    <p style="white-space:normal;">{{x.content1}}</p>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
